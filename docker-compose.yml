@@ -1,6 +1,19 @@
 version: "3.8"
 
 services:
+  app:
+    container_name: nest-app
+    build: .
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - localstack
+    networks:
+      - nest-with-localstack-network
+
   localstack:
     container_name: "localstack"
     image: localstack/localstack
@@ -13,3 +26,9 @@ services:
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - nest-with-localstack-network
+networks:
+  nest-with-localstack-network:
+    name: nest-with-localstack-network
+    driver: bridge
