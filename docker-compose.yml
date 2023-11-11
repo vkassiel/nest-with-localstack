@@ -4,6 +4,7 @@ services:
   app:
     container_name: nest-app
     build: .
+    entrypoint: docker-entrypoint.sh
     command: npm run start:dev
     ports:
       - 3000:3000
