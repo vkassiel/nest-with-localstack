@@ -1,5 +1,5 @@
 {
-  "name": "nest-with-localstack",
+  "name": "nestjs-s3-upload-with-localstack",
   "version": "0.0.1",
   "description": "",
   "author": "",

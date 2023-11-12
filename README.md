@@ -1,4 +1,4 @@
-# nest-with-localstack
+# nestjs-s3-upload-with-localstack
 A study application to test a file upload using a local stack that simulates an AWS S3 bucket.
 
 ### Requirements

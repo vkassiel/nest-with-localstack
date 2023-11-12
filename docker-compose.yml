@@ -13,7 +13,7 @@ services:
     depends_on:
       - localstack
     networks:
-      - nest-with-localstack-network
+      - nestjs-s3-upload-with-localstack-network
 
   localstack:
     container_name: "localstack"
@@ -28,8 +28,8 @@ services:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
-      - nest-with-localstack-network
+      - nestjs-s3-upload-with-localstack-network
 networks:
-  nest-with-localstack-network:
-    name: nest-with-localstack-network
+  nestjs-s3-upload-with-localstack-network:
+    name: nestjs-s3-upload-with-localstack-network
     driver: bridge
